@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test iFrame</title>
+</head>
+
+<body>
+    <h1>Test iFrame</h1>
+    <input type="text" id="url" placeholder="https://...">
+    <br><br>
+    <input type="text" id="width" placeholder="500px">
+    <br><br>
+    <input type="text" id="height" placeholder="600px">
+    <br><br>
+    <button onclick="createFrame()">Load URL</button>
+    <div id="container"></div>
+    
+    <script>
+        function createFrame() {
+            var url = document.getElementById("url").value;
+            var width = document.getElementById("width").value || "500px"; // Default to 100% if not specified
+            var height = document.getElementById("height").value || "600px"; // Default to 400px if not specified
+            var iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.style.width = width;
+            iframe.style.height = height;
+            var container = document.getElementById("container");
+            container.innerHTML = "<br><br>";
+            container.appendChild(iframe);
+        }
+    </script>
+</body>
+
+</html>
