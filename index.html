@@ -25,6 +25,7 @@
             iframe.src = url;
             iframe.style.width = width;
             iframe.style.height = height;
+            iframe.allow = "payment";
             var container = document.getElementById("container");
             container.innerHTML = "<br><br>";
             container.appendChild(iframe);
